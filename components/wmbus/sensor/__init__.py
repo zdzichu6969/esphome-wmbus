@@ -196,7 +196,7 @@ async def to_code(config):
         id = conf[CONF_ID]
         if id and id.type == sensor.Sensor:
             if config[CONF_ADD_PREFIX]:
-                conf['name'] = str(config[CONF_METER_ID]) + " " + conf['name']
+                conf['name'] = conf['name']
             sens = await sensor.new_sensor(conf)
             cg.add(var.add_sensor(key, sens))
     wmbus = await cg.get_variable(config[CONF_WMBUS_ID])
